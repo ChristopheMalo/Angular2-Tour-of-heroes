@@ -14,4 +14,9 @@ How to
 - Code the package JSON file
 - Install dependencies
 - Create the app sub-folder
+- Init front and component files
+- Start the server in watch mode - to see the dev in the browser in real time
 - Code the app component (app.component.ts)(hosts the client user experience)
+- Code the main component
+- Code the index component
+- Code the css file
