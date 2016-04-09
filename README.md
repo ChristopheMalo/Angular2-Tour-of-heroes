@@ -19,5 +19,5 @@ How to
 - Code the app component (app.component.ts)(hosts the client user experience) (init base code)
 - Code the main component (init base code)
 - Code the index component (init base code)
-- Code the hero object
+- Code the hero object (Class, property)
 - Code the css file
