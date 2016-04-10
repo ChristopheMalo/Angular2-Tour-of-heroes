@@ -6,14 +6,9 @@
  */
 // Import library
 import {Component} from 'angular2/core';
+import {Hero} from './hero';
+import {HeroDetailComponent} from './hero-detail.component';
 
-// Hero class
-export class Hero {
-  id:   number;
-  name: string;
-}
-
-// The decorator - What template use end hox to create the component
 @Component({
   selector: 'hero-app',
   template: `
@@ -26,11 +21,7 @@ export class Hero {
                 <span class="badge">{{hero.id}}</span>: {{hero.name}}
               </li>
             </ul>
-            <div *ngIf="selectedHero">
-              <h2>{{selectedHero.name}} details</h2>
-              <div><label>id: </label>{{selectedHero.id}}</div>
-              <div><label>name: </label><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
-            </div>
+            <hero-detail [hero]="selectedHero"></hero-detail>
             `,
   styles:[`
   .selected {
@@ -70,7 +61,7 @@ export class Hero {
     display: inline-block;
     font-size: small;
     color: white;
-    padding: 0.8em 0.7em 0 0.7em;
+    padding: 0.3em 0.7em 0 0.7em;
     background-color: #607D8B;
     line-height: 1em;
     position: relative;
@@ -80,25 +71,15 @@ export class Hero {
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
+`],
+  directives: [HeroDetailComponent]
 })
 
 // The class controls the appearance and behavior of view through its template
 export class AppComponent {
-  // Title of the page
-  title = 'Tour of heroes';
-  
-  // Property for the heroes
-  heroes = HEROES;
-  
-  // Static Hero property to test
-//  hero: Hero = {
-//    id: 1,
-//    name: 'Magneto'
-//  };
-
-  // selectedHero property remplace the static hero: Hero property
-  selectedHero: Hero;
+  title = 'Tour of heroes'; // Title of the page
+  heroes = HEROES; // Property for the heroes
+  selectedHero: Hero; // selectedHero property
   
   onSelect(hero: Hero) {this.selectedHero = hero;}
 }
