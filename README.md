@@ -20,4 +20,7 @@ How to
 - Code the main component (init base code)
 - Code the index component (init base code)
 - Code the hero object (Class, property)
+- Code some datas in arrays to populate the site
+- Code the list of heroes
+- Code the style for this specific class (Hero) and list of heroes
 - Code the css file
