@@ -24,4 +24,5 @@ How to
 - Code the list of heroes
 - Code the style for this specific class (Hero) and list of heroes
 - Code the select hero
+- Break the app component and code the hero detail component
 - Code the css file
