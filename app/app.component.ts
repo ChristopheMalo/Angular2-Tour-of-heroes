@@ -20,13 +20,17 @@ export class Hero {
             <h1>{{title}}</h1>
             <h2>My Heroes</h2>
             <ul class="heroes">
-              <li *ngFor="#hero of heroes">
+              <li *ngFor="#hero of heroes"\n\
+                [class.selected]="hero === selectedHero"
+                (click)="onSelect(hero)">
                 <span class="badge">{{hero.id}}</span>: {{hero.name}}
               </li>
             </ul>
-            <h2>{{hero.name}} details</h2>
-            <div><label>id: </label>{{hero.id}}</div>
-            <div><label>name: </label><input [(ngModel)]="hero.name" placeholder="name"></div>
+            <div *ngIf="selectedHero">
+              <h2>{{selectedHero.name}} details</h2>
+              <div><label>id: </label>{{selectedHero.id}}</div>
+              <div><label>name: </label><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
+            </div>
             `,
   styles:[`
   .selected {
@@ -81,17 +85,22 @@ export class Hero {
 
 // The class controls the appearance and behavior of view through its template
 export class AppComponent {
-  // Titile of the page
+  // Title of the page
   title = 'Tour of heroes';
   
   // Property for the heroes
   heroes = HEROES;
   
-  // Hero property
-  hero: Hero = {
-    id: 1,
-    name: 'Magneto'
-  };
+  // Static Hero property to test
+//  hero: Hero = {
+//    id: 1,
+//    name: 'Magneto'
+//  };
+
+  // selectedHero property remplace the static hero: Hero property
+  selectedHero: Hero;
+  
+  onSelect(hero: Hero) {this.selectedHero = hero;}
 }
 
 // An array of heroes - type Hero
