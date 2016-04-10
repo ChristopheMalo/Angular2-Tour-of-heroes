@@ -23,4 +23,5 @@ How to
 - Code some datas in arrays to populate the site
 - Code the list of heroes
 - Code the style for this specific class (Hero) and list of heroes
+- Code the select hero
 - Code the css file
